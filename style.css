@@ -1,0 +1,58 @@
+* {
+    border: red 0px solid;
+}
+
+body {
+    margin: 1% 10%;
+    background-color: #0C4A6E;
+    background-image: url(img/BackgroundCloudy.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.flex {
+    display: flex;
+}
+
+.grid {
+    display: grid;
+}
+
+.container {
+    border-radius: 8px;
+    background-color: white;
+}
+
+header {
+    margin: auto;
+    padding: 1%;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+header .grid {
+    grid-template: 4fr 1fr 1fr 1fr / 1fr;
+}
+
+header>img {
+    grid-column: 1 / 2;
+    height: 7dvh;
+}
+
+header>ul>li, .mainMenu>li>a {
+    text-decoration: none;
+    list-style: none;
+}
+
+.mainMenu>li {
+    border-left: #0C4A6E solid 5px;
+    border-radius: 3px;
+    padding: 5px;
+}
+
+.mainMenu{
+    grid-column: 4 / 5;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10%;
+    margin-right: 5%;
+}
