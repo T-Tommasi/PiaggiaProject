@@ -6,8 +6,56 @@ body {
     margin: 1% 10%;
     background-color: #0C4A6E;
     background-image: url(img/BackgroundCloudy.svg);
+    background-position: fixed;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: fill;
+}
+
+button {
+    background-color: #075985;
+    color: white;
+    border-radius: 12px;
+    font-family: "Roboto", serif;
+    font-weight: 400;
+    font-style: normal; 
+}
+
+button .flex {
+    justify-content: center;
+    align-items: center;
+}
+
+button:active {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    background-color: #082f49;
+    transform: scale(0.98);
+}
+
+.roboto-regular {
+    font-family: "Roboto", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.roboto-bold {
+    font-family: "Roboto", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.kablammo-regular {
+    font-family: "Kablammo", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "MORF" 0
 }
 
 .flex {
@@ -27,6 +75,8 @@ header {
     margin: auto;
     padding: 1%;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    position: relative;
+    z-index: 1;
 }
 
 header .grid {
@@ -55,4 +105,95 @@ header>ul>li, .mainMenu>li>a {
     align-items: center;
     gap: 10%;
     margin-right: 5%;
+}
+
+.mainBody {
+    grid-template: repeat(3, 1fr) / 1fr 3fr;
+    height: 80dvh;
+}
+
+.sideMenu {
+    grid-column: 1 / 2;
+    grid-row: 1 / 4;
+    z-index: 0;
+    position: relative;
+    background: #f0f9ff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 8px;
+}
+
+.gameBoard {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.gameBoard>button {
+    background-color: #075985;
+    color: white;
+    padding: 2px;
+    border-radius: 22px;
+}
+
+.gameBoard>button>div {
+    background-color: white;
+    color: #082f49;
+    padding: 10px;
+    border-radius: 22px;
+    width: 15dvh;
+    margin-bottom: 5%;
+}
+
+#sasso.flex,#carta.flex,#forbici.flex {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+.playSelection {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    padding: 5%;
+}
+
+.screen {
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: black;
+    border-radius: 15px;
+    transform: perspective(800px) rotateX(2deg);
+    transform-origin: 50% 50%;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
+    color: white;
+}
+
+.screen>*{
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 8px 24px;
+}
+
+.sideMenu {
+    grid-template: repeat(5, 1fr) / repeat(2, 1fr);
+    padding: 4%;
+    gap: 15px;
+}
+
+.sideMenu>p{
+    grid-column: 1 / 3;
+}
+
+.sideMenu>button {
+    height: 7dvh;
+    font-size: 0.8em;
+    margin-top: max(-3dvh, -1%);
+}
+
+#roundNumber {
+    grid-column: 1 / 3;
+}
+
+#roundNumber,#pcWon,#pcLoss {
+    text-align: center;
 }
